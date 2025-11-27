@@ -133,6 +133,7 @@ a {
 /* ==================================== */
 .hero {
     background-color: var(--background-soft);
+    background-image: url('/hair-salon-coursework/img/hero-bg.jpg');
     padding: 100px 0; 
     text-align: left;
 }
