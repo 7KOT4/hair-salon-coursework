@@ -67,25 +67,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-document.addEventListener('DOMContentLoaded', () => {
-    // Знаходимо елементи
-    const burgerButton = document.querySelector('.burger-menu');
-    const navMenu = document.querySelector('.nav');
-    const menuLinks = document.querySelectorAll('.menu__link');
-
-    // Перевіряємо, чи вони існують на сторінці
-    if (burgerButton && navMenu) {
-        
-        // 1. При кліку на бургер -> відкрити/закрити меню
-        burgerButton.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // 2. При кліку на будь-який пункт меню -> закрити меню
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
-        });
-    }
-});
