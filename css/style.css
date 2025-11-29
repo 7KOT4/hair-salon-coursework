@@ -440,4 +440,90 @@ a {
     .hero__title {
         font-size: 2.5rem;
     }
+/* ==================================== */
+/* 10. АДАПТИВНІСТЬ */
+/* ==================================== */
+@media (max-width: 1024px) {
+    .hero__grid, .about__grid, .contact__grid {
+        grid-template-columns: 1fr;
+    }
+    .about__image-container {
+        order: 2;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .about__text-content {
+        order: 1;
+        padding-right: 0;
+    }
+    .contact__info-block {
+        order: 2;
+    }
+    .contact__map-wrapper {
+        order: 1;
+        margin-bottom: 30px;
+    }
+    .categories__grid, .reviews__grid, .features__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* СТИЛІ ДЛЯ МОБІЛЬНОГО МЕНЮ */
+    .burger-menu {
+        display: block; /* Показуємо кнопку */
+        position: relative;
+        z-index: 1001;
+    }
+
+    /* Меню за замовчуванням приховане */
+    .nav {
+        display: none; 
+        position: absolute;
+        top: 80px; /* Висота хедера */
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 20px 0;
+        border-top: 1px solid var(--border-color);
+    }
+
+    /* Цей клас додається через JS, коли меню відкрите */
+    .nav.active {
+        display: block; 
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu__link {
+        display: block;
+        padding: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .hero__title {
+        font-size: 2.5rem;
+    }
+    .categories__grid, .reviews__grid, .features__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Анімація випадання */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
