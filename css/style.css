@@ -8,95 +8,79 @@
 }
 
 :root {
-    --color-primary-green: #228B22; /* Зелений */
-    --color-accent-orange: #FFA500; /* Помаранчевий акцент */
-    --color-primary-dark: #030213; /* Майже чорний */
-    --color-bg-soft: #F9F9F4; /* М'який фон */
-    --color-white: #FFFFFF;
-    --color-gray: #666666; 
-    --color-dark: #1a1a1a;
-    --border-color: #e0e0e0; 
+    --primary-color: #38761D; /* Темно-зелений */
+    --accent-color: #F8B500; /* Жовто-помаранчевий */
+    --text-dark: #333333;
+    --background-soft: #F9F9F4; 
+    --border-color: #ddd;
 }
 
 body {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-    font-size: 16px;
+    font-family: 'Roboto', 'Poppins', sans-serif;
     line-height: 1.6;
-    color: var(--color-dark);
+    color: var(--text-dark);
     background-color: #FFFFFF;
-    font-weight: 400; 
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0;
-    color: var(--color-primary-green);
+h1, h2, h3 {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--primary-color);
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .section {
-    padding: 96px 0;
+    padding: 80px 0; 
 }
 
 .section__title {
     text-align: center;
-    margin-bottom: 48px;
-    font-size: 2.5rem; 
-    font-weight: 700;
-}
-.section__subtitle {
-    text-align: center;
-    color: var(--color-gray);
-    font-size: 1.125rem;
     margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 .section__title-left {
     text-align: left;
     margin-bottom: 30px;
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: 700;
+    color: var(--primary-color);
 }
 
 .button {
     display: inline-block;
-    padding: 16px 32px; 
+    padding: 12px 30px;
     border: none;
-    border-radius: 8px;
-    font-weight: 600;
+    border-radius: 6px;
+    font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s;
-    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
     text-decoration: none;
 }
 
 .button--primary {
-    background-color: var(--color-primary-green);
-    color: #fff;
+    background-color: var(--accent-color);
+    color: #fff; /* Або #38761D, якщо хотіли темний текст */
 }
 .button--primary:hover {
-    background-color: #1b631b;
-}
-.button--accent {
-    background-color: var(--color-accent-orange);
-    color: #fff;
-    box-shadow: 0 4px 6px rgba(255, 165, 0, 0.4);
-}
-.button--accent:hover {
     background-color: #d19500;
+    transform: translateY(-2px);
+}
+.button--secondary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.button--secondary:hover {
+    background-color: #2b5c17;
 }
 
-
-/* ==================================== */
-/* 2. HEADER ТА НАВІГАЦІЯ */
-/* ==================================== */
+/* HEADER */
 .header {
     background-color: #fff;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
@@ -111,35 +95,20 @@ h1, h2, h3, h4 {
     height: 80px;
 }
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--color-primary-green);
+    color: var(--primary-color);
     text-decoration: none;
 }
-.logo-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.logo-wrapper .logo__icon {
-    font-size: 2rem;
-    color: var(--color-primary-green);
-}
-
-/* Стилі меню для ДЕСКТОПУ */
 .menu {
     list-style: none;
     display: flex;
-    gap: 32px;
+    gap: 25px;
 }
 .menu__link {
-    color: var(--color-gray);
+    color: var(--text-dark);
     font-weight: 500;
-    transition: color 0.2s;
     text-decoration: none;
-}
-.menu__link:hover {
-    color: var(--color-primary-green);
 }
 .burger-menu {
     display: none;
@@ -148,232 +117,164 @@ h1, h2, h3, h4 {
     cursor: pointer;
 }
 
-/* ==================================== */
-/* 3. HERO СЕКЦІЯ */
-/* ==================================== */
+/* HERO */
 .hero {
-    background-color: #fff; 
+    background-color: var(--background-soft);
     padding: 100px 0;
 }
 .hero__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
     align-items: center;
 }
 .hero__title {
-    font-size: 3rem; 
-    font-weight: 700;
-    color: var(--color-primary-green);
-    margin-bottom: 24px;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
 }
-.hero__subtitle {
+.hero__text {
     font-size: 1.25rem;
-    color: var(--color-gray);
-    margin-bottom: 48px;
-}
-.hero__image-container {
-    position: relative;
+    color: #555;
+    margin-bottom: 30px;
 }
 .hero__image {
     width: 100%;
     height: auto;
-    border-radius: 16px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-.hero__decoration-circle {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 100px;
-    height: 100px;
-    background-color: var(--color-accent-orange);
-    border-radius: 50%;
-    opacity: 0.15;
-    z-index: -1;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* ==================================== */
-/* 4. КАТЕГОРІЇ ТОВАРІВ */
-/* ==================================== */
+/* ОСОБЛИВОСТІ (Features) */
+.features {
+    background-color: #fff;
+    padding: 60px 0;
+}
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+.feature-card {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+/* КАТЕГОРІЇ */
 .categories {
     background-color: #fff;
 }
 .categories__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     text-align: center;
 }
 .category-card {
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: box-shadow 0.3s, transform 0.3s;
-    cursor: pointer;
-    background-color: var(--color-bg-soft);
-    padding: 0 0 24px 0; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: var(--background-soft);
+    padding: 30px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s;
 }
 .category-card:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
-}
-.category-img-wrapper {
-    width: 150px;
-    height: 150px;
-    margin: 20px auto 15px;
-    border-radius: 50%; 
-    overflow: hidden;
-    background-color: var(--color-white);
-    border: 3px solid var(--color-accent-orange); 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 .category-img {
-    width: 80%; 
-    height: 80%;
+    width: 100%;
+    max-height: 200px;
     object-fit: contain;
-}
-.category-card h3 {
-    padding: 0 10px;
     margin-bottom: 15px;
-    font-weight: 600;
-    font-size: 1.25rem;
-    color: var(--color-dark);
-}
-.button--category {
-    display: inline-block;
-    padding: 10px 24px;
-    border: 2px solid var(--color-primary-green);
-    border-radius: 6px;
-    color: var(--color-primary-green);
-    font-weight: 600;
-    text-decoration: none;
-    background-color: transparent;
-    transition: all 0.3s;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
-.button--category:hover {
-    background-color: var(--color-primary-green);
-    color: #fff;
 }
 
-/* 5. ПРО НАС (About Section) */
+/* АКЦІЇ */
+.bg-soft-green {
+    background-color: #E8F5E9; 
+    padding: 60px 0;
+}
+.text-dark-green {
+    color: #1B5E20;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* ПРО НАС */
 .about {
-    background-color: var(--color-bg-soft);
+    background-color: #fff;
 }
 .about__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
     align-items: center;
 }
 .about__image {
     width: 100%;
     height: auto;
-    border-radius: 16px;
-    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-.about__image-container {
-    position: relative;
+.about__text-content {
+    padding-right: 30px;
 }
-.about__decoration-circle {
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 100px;
-    height: 100px;
-    background-color: var(--color-accent-orange);
-    border-radius: 50%;
-    opacity: 0.15;
-    z-index: -1;
-}
-.stats-grid {
-    margin-top: 32px;
-    gap: 16px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-}
-.stat-card {
-    background-color: var(--color-white);
-    padding: 16px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    flex-basis: 30%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-.stat-value {
-    color: var(--color-accent-orange);
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-.stat-label {
-    color: var(--color-gray);
-    font-size: 0.9rem;
+.about__text {
+    margin-bottom: 15px;
+    color: #555;
 }
 
-/* 6. ВІДГУКИ */
+/* ВІДГУКИ */
 .reviews {
-    background-color: #fff;
+    background-color: var(--background-soft);
 }
 .reviews__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 30px;
 }
 .review-card {
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 24px;
-    background-color: var(--color-bg-soft);
+    background-color: #fff;
+    padding: 25px;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-.rating {
-    color: var(--color-accent-orange);
-    font-size: 1.2rem;
-    margin-bottom: 10px;
 }
 .review__quote {
     font-style: italic;
-    color: var(--color-gray);
     margin-bottom: 15px;
 }
 .review__author {
-    color: var(--color-primary-green);
-    font-weight: 600;
-}
-.review__location {
-    font-size: 0.9rem;
-    color: var(--color-gray);
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
-/* 7. КОНТАКТИ ТА КАРТА */
+/* КОНТАКТИ */
 .contact {
-    background-color: var(--color-bg-soft);
+    background-color: #fff;
 }
 .contact__grid {
+    display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 40px;
+    gap: 50px;
     align-items: flex-start;
 }
 .contact__info-block {
     padding: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #fcfcfc;
 }
 .contact__detail {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .contact__detail-title {
     font-weight: 700;
-    color: var(--color-primary-green);
+    color: var(--primary-color);
     margin-bottom: 5px;
 }
 .contact__map-wrapper {
@@ -381,7 +282,6 @@ h1, h2, h3, h4 {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-/* СТИЛІ ДЛЯ ІНТЕРАКТИВНИХ ІКОНОК */
 .social-icons-container {
     display: flex;
     gap: 15px;
@@ -397,120 +297,67 @@ h1, h2, h3, h4 {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s;
 }
 .social-icon:hover {
-    background-color: var(--color-primary-green);
-    transform: scale(1.1);
+    background-color: var(--primary-color);
 }
 .social-icon:hover img {
     filter: brightness(0) invert(1);
 }
 
-/* 8. FOOTER */
+/* FOOTER */
 .footer {
-    background-color: var(--color-primary-dark); 
+    background-color: var(--primary-color);
     color: #fff;
-    padding: 32px 0;
+    padding: 20px 0;
     text-align: center;
-}
-.footer__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.footer__social {
-    margin-bottom: 10px;
-}
-.footer__social img {
-    filter: brightness(0) invert(1);
-    margin: 0 5px;
-    width: 24px;
-}
-.footer__copyright {
-    color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
 }
 
-/* ==================================== */
-/* 9. АДАПТИВНІСТЬ (ВКЛЮЧАЮЧИ МОБІЛЬНЕ МЕНЮ) */
-/* ==================================== */
+/* АДАПТИВНІСТЬ */
 @media (max-width: 1024px) {
     .hero__grid, .about__grid, .contact__grid {
         grid-template-columns: 1fr;
     }
     .about__image-container {
         order: 2;
-        max-width: 400px;
-        margin: 0 auto;
     }
     .about__text-content {
         order: 1;
         padding-right: 0;
     }
-    .contact__info-block {
-        order: 2;
-    }
     .contact__map-wrapper {
-        order: 1;
         margin-bottom: 30px;
     }
-    .categories__grid {
+    .categories__grid, .reviews__grid, .features__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .burger-menu {
-        display: block; /* Показуємо бургер */
+        display: block;
     }
-
-    /* Стилі для ВІДКРИТОГО меню на мобільному */
     .nav {
-        display: none; /* Спочатку приховано */
+        display: none; /* Меню приховане */
         position: absolute;
-        top: 80px; /* Відступ від верху (висота хедера) */
+        top: 80px;
         left: 0;
         right: 0;
-        background-color: #ffffff;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         z-index: 999;
-        border-top: 1px solid #eee;
         padding: 20px 0;
     }
-
-    /* Клас .active додається через JS при кліку на бургер */
     .nav.active {
-        display: block; /* Показуємо меню, коли клас active є */
+        display: block; /* Меню відкрите */
     }
-
     .menu {
-        flex-direction: column; /* Пункти вертикально */
-        align-items: center;
-        gap: 0;
-    }
-
-    .menu li {
-        width: 100%;
+        flex-direction: column;
         text-align: center;
     }
-
-    .menu__link {
-        display: block;
-        padding: 15px 0;
-        width: 100%;
-        border-bottom: 1px solid #f9f9f9;
-        color: var(--color-dark); /* Темний колір тексту */
-        font-size: 1.1rem;
-    }
-    .menu__link:hover {
-        background-color: var(--color-bg-soft);
-    }
-
-    .hero__title {
-        font-size: 2.5rem;
-    }
-    .categories__grid, .reviews__grid {
+    .categories__grid, .reviews__grid, .features__grid {
         grid-template-columns: 1fr;
     }
 }
