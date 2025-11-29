@@ -440,3 +440,55 @@ a {
         font-size: 2.5rem;
     }
 }
+@media (max-width: 768px) {
+    /* 1. Показуємо кнопку бургера */
+    .burger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* 2. Стилізуємо випадаюче меню (спочатку воно сховане: display: none) */
+    .nav {
+        display: none; 
+        position: absolute;
+        top: 80px; /* Висота хедера, щоб меню було під ним */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff; /* Білий фон */
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* Тінь знизу */
+        padding: 20px 0;
+        z-index: 999;
+        border-top: 1px solid #eee;
+    }
+
+    /* 3. Клас .active робить меню видимим (додається через JS) */
+    .nav.active {
+        display: block;
+        animation: slideDown 0.3s ease forwards; /* Анімація появи */
+    }
+
+    /* 4. Робимо пункти меню вертикальними */
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu__link {
+        display: block;
+        padding: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid #f9f9f9;
+    }
+}
+
+/* Анімація плавного випадання */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
