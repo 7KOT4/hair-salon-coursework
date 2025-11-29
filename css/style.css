@@ -1,5 +1,5 @@
 /* ==================================== */
-/* 1. БАЗОВІ СТИЛІ ТА ПАЛІТРА */
+/* СТИЛІ ДЛЯ ПЕРУКАРНІ (Bella Salon) */
 /* ==================================== */
 * {
     margin: 0;
@@ -8,10 +8,10 @@
 }
 
 :root {
-    --primary-color: #38761D; /* Темно-зелений */
-    --accent-color: #F8B500; /* Жовто-помаранчевий */
-    --text-dark: #333333;
-    --background-soft: #F9F9F4; 
+    --primary-color: #333333; /* Чорний/Темно-сірий */
+    --accent-color: #D4AF37; /* Золотий */
+    --text-dark: #1a1a1a;
+    --background-soft: #f8f8f8; /* Світло-сірий */
     --border-color: #ddd;
 }
 
@@ -42,48 +42,52 @@ h1, h2, h3 {
     margin-bottom: 40px;
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+}
+.section__subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
 }
 .section__title-left {
     text-align: left;
     margin-bottom: 30px;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: var(--primary-color);
 }
 
 .button {
     display: inline-block;
     padding: 12px 30px;
     border: none;
-    border-radius: 6px;
-    font-weight: 700;
+    border-radius: 4px;
+    font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: all 0.3s;
     text-decoration: none;
 }
 
 .button--primary {
-    background-color: var(--accent-color);
-    color: #fff; /* Або #38761D, якщо хотіли темний текст */
-}
-.button--primary:hover {
-    background-color: #d19500;
-    transform: translateY(-2px);
-}
-.button--secondary {
     background-color: var(--primary-color);
     color: #fff;
 }
+.button--primary:hover {
+    background-color: var(--accent-color);
+}
+.button--secondary {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
 .button--secondary:hover {
-    background-color: #2b5c17;
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 /* HEADER */
 .header {
     background-color: #fff;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -95,7 +99,7 @@ h1, h2, h3 {
     height: 80px;
 }
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
@@ -109,6 +113,9 @@ h1, h2, h3 {
     color: var(--text-dark);
     font-weight: 500;
     text-decoration: none;
+}
+.menu__link:hover {
+    color: var(--accent-color);
 }
 .burger-menu {
     display: none;
@@ -124,28 +131,27 @@ h1, h2, h3 {
 }
 .hero__grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
 }
 .hero__title {
     font-size: 3.5rem;
     margin-bottom: 20px;
-    color: var(--text-dark);
 }
 .hero__text {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: #555;
     margin-bottom: 30px;
 }
 .hero__image {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* ОСОБЛИВОСТІ (Features) */
+/* ОСОБЛИВОСТІ (FEATURES) */
 .features {
     background-color: #fff;
     padding: 60px 0;
@@ -159,7 +165,7 @@ h1, h2, h3 {
 .feature-card {
     padding: 20px;
     border: 1px solid #eee;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 .feature-icon {
     width: 50px;
@@ -167,7 +173,7 @@ h1, h2, h3 {
     margin-bottom: 15px;
 }
 
-/* КАТЕГОРІЇ */
+/* ПОСЛУГИ (CATEGORIES) */
 .categories {
     background-color: #fff;
 }
@@ -180,28 +186,38 @@ h1, h2, h3 {
 .category-card {
     background-color: var(--background-soft);
     padding: 30px;
-    border-radius: 10px;
-    transition: box-shadow 0.3s;
+    border-radius: 8px;
+    transition: transform 0.3s;
 }
 .category-card:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
 }
 .category-img {
     width: 100%;
-    max-height: 200px;
-    object-fit: contain;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
     margin-bottom: 15px;
+}
+.button--category {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+.button--category:hover {
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 /* АКЦІЇ */
-.bg-soft-green {
-    background-color: #E8F5E9; 
+.bg-soft-accent {
+    background-color: #FFF8E1; /* Світло-золотий */
     padding: 60px 0;
-}
-.text-dark-green {
-    color: #1B5E20;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
 }
 
 /* ПРО НАС */
@@ -217,15 +233,10 @@ h1, h2, h3 {
 .about__image {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 .about__text-content {
     padding-right: 30px;
-}
-.about__text {
-    margin-bottom: 15px;
-    color: #555;
 }
 
 /* ВІДГУКИ */
@@ -240,13 +251,13 @@ h1, h2, h3 {
 .review-card {
     background-color: #fff;
     padding: 25px;
-    border-left: 5px solid var(--accent-color);
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 .review__quote {
     font-style: italic;
     margin-bottom: 15px;
+    color: #555;
 }
 .review__author {
     font-weight: 700;
@@ -266,21 +277,12 @@ h1, h2, h3 {
 .contact__info-block {
     padding: 20px;
     border: 1px solid #eee;
-    border-radius: 10px;
-    background-color: #fcfcfc;
-}
-.contact__detail {
-    margin-bottom: 15px;
-}
-.contact__detail-title {
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 5px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 .contact__map-wrapper {
     height: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 .social-icons-container {
     display: flex;
@@ -290,20 +292,15 @@ h1, h2, h3 {
 .social-icon {
     width: 40px;
     height: 40px;
-    padding: 4px;
-    border: 1px solid var(--border-color);
+    padding: 5px;
+    border: 1px solid #ccc;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 }
 .social-icon:hover {
     background-color: var(--primary-color);
-}
-.social-icon:hover img {
-    filter: brightness(0) invert(1);
+    filter: invert(1);
 }
 
 /* FOOTER */
@@ -323,10 +320,6 @@ h1, h2, h3 {
     .about__image-container {
         order: 2;
     }
-    .about__text-content {
-        order: 1;
-        padding-right: 0;
-    }
     .contact__map-wrapper {
         margin-bottom: 30px;
     }
@@ -340,18 +333,17 @@ h1, h2, h3 {
         display: block;
     }
     .nav {
-        display: none; /* Меню приховане */
+        display: none;
         position: absolute;
         top: 80px;
         left: 0;
         right: 0;
         background-color: #fff;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        z-index: 999;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         padding: 20px 0;
     }
     .nav.active {
-        display: block; /* Меню відкрите */
+        display: block;
     }
     .menu {
         flex-direction: column;
